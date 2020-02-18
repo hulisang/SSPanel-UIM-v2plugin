@@ -1,0 +1,214 @@
+{ "dns": {
+  "servers": [
+    {
+      "address": "localhost",
+      "port": 53,
+      "domains": [
+        "domain:akadns.net",
+        "domain:akam.net",
+        "domain:akamai.com",
+        "domain:akamai.net",
+        "domain:akamaiedge.net",
+        "domain:akamaihd.net",
+        "domain:akamaistream.net",
+        "domain:akamaitech.net",
+        "domain:akamaitechnologies.com",
+        "domain:akamaitechnologies.fr",
+        "domain:akamaized.net",
+        "domain:edgekey.net",
+        "domain:edgesuite.net",
+        "domain:srip.net",
+        "domain:footprint.net",
+        "domain:level3.net",
+        "domain:llnwd.net",
+        "domain:edgecastcdn.net",
+        "domain:cloudfront.net",
+        "domain:netflix.com",
+        "domain:netflix.net",
+        "domain:nflximg.net",
+        "domain:nflxvideo.net",
+        "domain:nflxso.net",
+        "domain:nflxext.com",
+        "domain:hulu.com",
+        "domain:huluim.com",
+        "domain:hbonow.com",
+        "domain:hbogo.com",
+        "domain:hbo.com",
+        "domain:amazon.com",
+        "domain:amazon.co.uk",
+        "domain:amazonvideo.com",
+        "domain:crackle.com",
+        "domain:pandora.com",
+        "domain:vudu.com",
+        "domain:blinkbox.com",
+        "domain:abc.com",
+        "domain:fox.com",
+        "domain:theplatform.com",
+        "domain:nbc.com",
+        "domain:nbcuni.com",
+        "domain:ip2location.com",
+        "domain:pbs.org",
+        "domain:warnerbros.com",
+        "domain:southpark.cc.com",
+        "domain:cbs.com",
+        "domain:brightcove.com",
+        "domain:cwtv.com",
+        "domain:spike.com",
+        "domain:go.com",
+        "domain:mtv.com",
+        "domain:mtvnservices.com",
+        "domain:playstation.net",
+        "domain:uplynk.com",
+        "domain:maxmind.com",
+        "domain:disney.com",
+        "domain:disneyjunior.com",
+        "domain:xboxlive.com",
+        "domain:lovefilm.com",
+        "domain:turner.com",
+        "domain:amctv.com",
+        "domain:sho.com",
+        "domain:mog.com",
+        "domain:wdtvlive.com",
+        "domain:beinsportsconnect.tv",
+        "domain:beinsportsconnect.net",
+        "domain:fig.bbc.co.uk",
+        "domain:open.live.bbc.co.uk",
+        "domain:sa.bbc.co.uk",
+        "domain:www.bbc.co.uk",
+        "domain:crunchyroll.com",
+        "domain:ifconfig.co",
+        "domain:omtrdc.net",
+        "domain:sling.com",
+        "domain:movetv.com"
+      ]
+    },
+    "8.8.8.8"
+  ]
+},
+  "api": {
+    "services": [
+      "HandlerService",
+      "LoggerService",
+      "StatsService",
+      "RuleService"
+    ],
+    "tag": "api"
+  },
+  "inbounds": [{
+    "listen": "127.0.0.1",
+    "port": 2333,
+    "protocol": "dokodemo-door",
+    "settings": {
+      "address": "127.0.0.1"
+    },
+    "tag": "api"
+  }
+  ],
+  "log": {
+    "loglevel": "info"
+  },
+  "outbounds": [{
+    "protocol": "freedom",
+    "settings": {
+      "domainStrategy": "UseIP"
+    }
+  },
+    {
+      "protocol": "blackhole",
+      "settings": {"response": {
+        "type": "none"
+      }},
+      "tag": "blocked"
+    },{
+      "protocol": "blackhole",
+      "settings": {"response": {
+        "type": "none"
+      }},
+      "tag": "blockedNodeUserLimited"
+    }, {
+      "protocol": "blackhole",
+      "settings": {"response": {
+        "type": "http"
+      }},
+      "tag": "blockedrule"
+    },{
+      "protocol": "blackhole",
+      "settings": {"response": {
+        "type": "http"
+      }},
+      "tag": "blockedip"
+    }
+  ],
+  "policy": {
+    "levels": {
+      "0": {
+        "connIdle": 300,
+        "downlinkOnly": 5,
+        "handshake": 4,
+        "statsUserDownlink": true,
+        "statsUserUplink": true,
+        "uplinkOnly": 2
+      }
+    },
+    "system": {
+      "statsInboundDownlink": false,
+      "statsInboundUplink": false
+    }
+  },
+  "reverse": {},
+  "routing": {
+    "rules": [{
+      "outboundTag": "blocked",
+      "protocol": [
+        "bittorrent"
+      ],
+      "type": "field"
+    },{
+      "outboundTag": "blockedNodeUserLimited",
+      "type": "field"
+    },
+      {
+        "inboundTag": [
+          "api"
+        ],
+        "outboundTag": "api",
+        "type": "field"
+      },
+      {
+        "domain": [
+          "regexp:(api|ps|sv|offnavi|newvector|ulog\\.imap|newloc)(\\.map|)\\.(baidu|n\\.shifen)\\.com",
+          "regexp:(.+\\.|^)(360|so)\\.(cn|com)",
+          "regexp:(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)"
+        ],
+        "outboundTag": "blocked",
+        "type": "field"
+      }
+    ],
+    "domainStrategy": "AsIs"
+  },
+  "stats": {},
+  "sspanel": {
+    "nodeid": 123456,
+    "checkRate": 60,
+    "SpeedTestCheckRate": 6,
+    "panelUrl": "https://google.com",
+    "panelKey": "55fUxDGFzH3n",
+    "downWithPanel": 1,
+    "mu_regex":  "%5m%id.%suffix",
+    "mu_suffix": "microsoft.com",
+    "mysql": {
+      "host": "https://bing.com",
+      "port": 3306,
+      "user": "demo_user",
+      "password": "demo_dbpassword",
+      "dbname": "demo_dbname"
+    },
+    "paneltype": 0,
+    "usemysql": 0,
+    "go_panel_host": "bwg.com",
+    "go_panel_key": "bbbbaaaaaaa",
+    "cf_key": "bbbbbbbbbbbbbbbbbb",
+    "cf_email": "rico93@outlxxxxxxxxxx.com",
+    "NodeUserLimited": 4
+  }
+}

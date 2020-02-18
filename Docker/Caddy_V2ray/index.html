@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <title>/</title>
+    <style>
+    body {background-color: #1C1C1C}
+    p {color: #f7f7f7;font-size: 24px;position: absolute;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);}
+    dot {
+        display: inline-block;
+        height: 1em;
+        line-height: 1;
+        text-align: left;
+        vertical-align: -.25em;
+        overflow: hidden;
+    }
+    dot::before {
+        display: inline-block;
+        content: '...\A..\A.';
+        white-space: pre;
+        animation: dot 3s infinite step-start both;
+    }
+
+    @keyframes dot {
+        33% {
+            transform: translateY(-2em);
+        }
+        66% {
+            transform: translateY(-1em);
+        }
+    }
+    </style>
+</head>
+<body>
+    <p>Across the Great Wall we can reach every corner in the world<dot>...</dot></p>
+</body>
+</html>

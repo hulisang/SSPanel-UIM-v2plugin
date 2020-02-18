@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+  v2ray:
+    image: hulisang/v2ray_v3:go_dev
+    restart: always
+    network_mode: "host"
+    environment:
+      sspanel_url: "https://xxxx"
+      key: "xxxx"
+      speedtest: 6
+      node_id: 10
+      api_port: 2333
+      downWithPanel: 1
+      LDNS: "1.1.1.1"
+      TZ: "Asia/Shanghai"
+      MYSQLHOST: "https://bing.com"
+      MYSQLDBNAME: "demo_dbname"
+      MYSQLUSR: "demo_user"
+      MYSQLPASSWD: "demo_dbpassword"
+      MYSQLPORT: 3306
+      PANELTYPE: 0
+      usemysql: 0
+      CF_Key: "bbbbbbbbbbbbbbbbbb"
+      CF_Email: "rico93@outlxxxxxxxxxx.com"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
