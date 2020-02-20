@@ -10,7 +10,7 @@ docker run -d --name=v2ray \
 -e MYSQLDBNAME="demo_dbname" -e MYSQLUSR="demo_user" -e MYSQLPASSWD="demo_dbpassword" -e MYSQLPORT=3306 \
 --log-opt max-size=10m --log-opt max-file=5 \
 --network=host --restart=always \
-hulisang/v2ray_v3:go_dev
+hulisang/v2ray_v3:go
 ```
 ```
 docker run -d --name=caddy \
