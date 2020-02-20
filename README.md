@@ -1,4 +1,4 @@
-更新安装脚本为rico收费版安装脚本，更新镜像hulisang/v2ray_v3:go_dev,原镜像hulisang/v2ray_v3:go还可以使用,增加自定义DNS，增加数据库连接（实验性，多半不行，rico免费版内核限制）
+更新安装脚本为rico收费版安装脚本，dev更新镜像hulisang/v2ray_v3:go_dev,原镜像hulisang/v2ray_v3:go还可以使用,增加自定义DNS，增加数据库连接（实验性，多半不行，rico免费版内核限制）
 避免脚本出现问题，推荐docker run方式
 
 使用方法：
