@@ -20,8 +20,23 @@ docker run -d --name=caddy \
 hulisang/v2ray_v3:caddy
 ```
 path极力不推荐使用/v2ray了（大家懂的）
+```
+稳定版
 
+mkdir v2ray-agent &&
+cd v2ray-agent &&
+curl https://raw.githubusercontent.com/hulisang/v2ray-sspanel-v3-mod_Uim-plugin/master/install.sh -o install.sh &&
+chmod +x install.sh &&
+bash install.sh
 
+测试版
+
+mkdir v2ray-agent &&
+cd v2ray-agent &&
+curl https://raw.githubusercontent.com/hulisang/v2ray-sspanel-v3-mod_Uim-plugin/dev/install.sh -o install.sh &&
+chmod +x install.sh &&
+bash install.sh
+```
 
 感恩原作者rico辛苦付出
 本人仅做备份和后续维护
