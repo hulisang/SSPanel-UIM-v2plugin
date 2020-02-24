@@ -44,6 +44,7 @@ services:
       - V2RAY_EMAIL=xxxx@outlook.com
       - V2RAY_PORT=10550
       - V2RAY_OUTSIDE_PORT=443
+      - TZ=Asia/Shanghai
     network_mode: "host"
     volumes:
       - ./.caddy:/root/.caddy
