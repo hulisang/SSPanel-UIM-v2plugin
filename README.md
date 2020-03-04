@@ -9,8 +9,7 @@ dev更新安装脚本为rico收费版安装脚本，dev更新镜像hulisang/v2ra
 ```
 docker run -d --name=v2ray \
 -e speedtest=6  -e api_port=2333 -e usemysql=0 -e downWithPanel=0  \
--e node_id=id -e sspanel_url=网站WebAPI地址 -e key=Sspanel_Mu_Key  -e MYSQLHOST=数据库ip地址  \
--e MYSQLDBNAME="demo_dbname" -e MYSQLUSR="demo_user" -e MYSQLPASSWD="demo_dbpassword" -e MYSQLPORT=3306 \
+-e node_id=id -e sspanel_url=网站WebAPI地址 -e key=Sspanel_Mu_Key \
 --log-opt max-size=10m --log-opt max-file=5 \
 --network=host --restart=always \
 hulisang/v2ray_v3:go
