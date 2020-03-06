@@ -3,7 +3,7 @@ dev更新安装脚本测试版，dev更新镜像升级core,原镜像hulisang/v2r
 
 
 ```
-稳定版
+master版
 
 mkdir v2ray-agent &&
 cd v2ray-agent &&
@@ -11,7 +11,7 @@ curl https://raw.githubusercontent.com/hulisang/v2ray-sspanel-v3-mod_Uim-plugin/
 chmod +x install.sh &&
 bash install.sh
 
-测试版
+dev版
 
 mkdir v2ray-agent &&
 cd v2ray-agent &&
