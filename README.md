@@ -1,27 +1,7 @@
-dev更新安装脚本为rico收费版安装脚本，dev更新镜像hulisang/v2ray_v3:go_dev,原镜像hulisang/v2ray_v3:go还可以使用,增加自定义DNS，增加数据库连接（实验性，多半不行，rico免费版内核限制）
-如果想使用请移步dev，本页面仍是老板master对接
+dev更新安装脚本测试版，dev更新镜像升级core,原镜像hulisang/v2ray_v3:go还可以使用,增加自定义DNS，增加数据库连接（实验性，多半不行，rico免费版内核限制）
+如果想使用请移步dev，本页面仍是老版master对接
 
 
-避免脚本出现问题，推荐docker run方式
-
-使用方法：
-
-```
-docker run -d --name=v2ray \
--e speedtest=6  -e api_port=2333 -e usemysql=0 -e downWithPanel=0  \
--e node_id=id -e sspanel_url=网站WebAPI地址 -e key=Sspanel_Mu_Key \
---log-opt max-size=10m --log-opt max-file=5 \
---network=host --restart=always \
-hulisang/v2ray_v3:go
-```
-```
-docker run -d --name=caddy \
--e ACME_AGREE=true -e V2RAY_DOMAIN=xxxx.com -e V2RAY_PATH=/xxxxx -e V2RAY_EMAIL=xxxx@outlook.com -e V2RAY_PORT=10550 -e V2RAY_OUTSIDE_PORT=443 \
---log-opt max-size=10m --log-opt max-file=5 \
---network=host --restart=always \
-hulisang/v2ray_v3:caddy
-```
-path极力不推荐使用/v2ray了（大家懂的）
 ```
 稳定版
 
