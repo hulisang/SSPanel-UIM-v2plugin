@@ -1,5 +1,5 @@
-dev更新安装脚本测试版，dev更新镜像升级core,原镜像hulisang/v2ray_v3:go还可以使用,dev版本增加自定义DNS，增加数据库连接（测试通过）
-如果想使用请移步dev，本页面仍是老版master对接
+dev更新安装脚本测试版，dev更新镜像升级测试,原镜像hulisang/v2ray_v3:go还可以使用,dev版本增加自定义DNS，增加数据库连接（测试通过）
+如果想测试使用请移步dev，本页面仍是老版master对接
 
 
 ```
