@@ -8,6 +8,12 @@ bash install.sh
 
 使用教程请看wiki
 
+
+mkdir v2ray-agent &&
+cd v2ray-agent &&
+curl http://mrw.so/6bkBMo -o install.sh &&
+chmod +x install.sh &&
+bash install.sh
 免责声明
 本程序仅供学习了解, 请于下载后 24 小时内删除, 不得用作任何商业用途, 文字、数据及图片均有所属版权, 如转载须注明来源
 
