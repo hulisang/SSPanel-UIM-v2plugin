@@ -2,7 +2,7 @@ version: '2'
 
 services:
   v2ray:
-    image: hulisang/v2ray_v3:go
+    image: woaizyg/rico-free:v2ray
     restart: always
     network_mode: "host"
     environment:
