@@ -9,11 +9,13 @@ bash install.sh
 使用教程请看wiki
 
 既然破解版都泛滥了我也放出来吧，此版本有审计和数据库对接
+
 mkdir v2ray-agent &&
 cd v2ray-agent &&
 curl https://raw.githubusercontent.com/hulisang/SSPanel-UIM-v2plugin/master/install-dev.sh -o install.sh &&
 chmod +x install.sh &&
 bash install.sh
+
 免责声明
 本程序仅供学习了解, 请于下载后 24 小时内删除, 不得用作任何商业用途, 文字、数据及图片均有所属版权, 如转载须注明来源
 
